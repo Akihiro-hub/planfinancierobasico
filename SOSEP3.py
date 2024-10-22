@@ -1,10 +1,11 @@
 import streamlit as st
 from openpyxl import Workbook
 import pandas as pd
+from io import BytesIO
 
 col1, col2 = st.columns(2)
 with col1:
-    st.write("## :blue[Planificación de préstamos]") 
+    st.write("### :blue[Planificación de préstamos]") 
     st.write("###### El monto disponible para el préstamo dependerá de (i) cuota mensual a poder pagar, (ii) tasa de interés, y (iii) período de amortización, como se puede calcular mediante esta herramienta.")
     a = st.number_input("Cuota mensual (GTQ)", 0, 1000000000, 2000)
     b = st.number_input("Tasa anual de interés %", 0, 100, 18)
@@ -16,7 +17,7 @@ with col1:
         st.text(round(d))
 
 with col2:
-    st.write("## :blue[Plan de pagos de deuda e interés (Cálculo de amortización de préstamo)]") 
+    st.write("### :blue[Plan de pagos de deuda e interés]") 
     st.write("###### Esta herramienta calcula el monto de la cuota mensual, la proporción de intereses y capital en un préstamo de amortización constante y genera el cuadro de amortización del préstamo. :green[(GuateCrece)]")  
 
     # 入力項目
